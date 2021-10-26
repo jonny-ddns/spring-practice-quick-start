@@ -2,6 +2,7 @@ package polymorphism.devices;
 
 import org.springframework.stereotype.Component;
 
+//@Component
 @Component("apple")
 public class AppleSpeaker implements Speaker {	
 	public AppleSpeaker() {

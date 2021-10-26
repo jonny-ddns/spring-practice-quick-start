@@ -7,19 +7,17 @@
 					http://www.springframework.org/schema/beans/spring-beans.xsd
 					http://www.springframework.org/schema/context
 					http://www.springframework.org/schema/context/spring-context-4.2.xsd">	
-
-<!-- 컴포넌트 스캔 등록 : 자동처리. 수동으로 빈으로 등록할 필요가 없음 -->
-	<context:component-scan base-package="polymorphism"></context:component-scan>
-
-	<!-- 빈으로 등록하기 -->
-	<!--
-	<bean id="tv" class="polymorphism.devices.SamsungTV">
-		생성자에 인자값 전달하기
-		<constructor-arg ref="speaker"></constructor-arg>	
-		<constructor-arg value="300000"></constructor-arg>
+<!-- 	<bean id="tv" class="polymorphism.devices.SamsungTV">
+		<constructor-arg ref="sony"></constructor-arg>
+		<constructor-arg ref="apple"></constructor-arg>	
+		<constructor-arg value="132456"></constructor-arg>
 	</bean>
- 	-->	
-
-	<!-- <bean id="speaker" class="polymorphism.devices.SonySpeaker"></bean> -->
-	<!-- <bean id="speaker" class="polymorphism.devices.AppleSpeaker"></bean> -->
+	
+	<bean id="sony" class="polymorphism.devices.SonySpeaker"></bean>
+	<bean id="apple" class="polymorphism.devices.AppleSpeaker"></bean> -->
+	
+	
+	<!-- 컴포넌트 스캔 등록 : 자동처리. 수동으로 빈으로 등록할 필요가 없음 -->
+	<context:component-scan base-package="polymorphism"></context:component-scan>
+	
 </beans>

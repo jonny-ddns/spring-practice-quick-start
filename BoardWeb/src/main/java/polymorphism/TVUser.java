@@ -2,7 +2,6 @@ package polymorphism;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
-
 import polymorphism.devices.TV;
 
 /*
@@ -20,12 +19,18 @@ public class TVUser {
 		//BeanFactory 로 객체 생성하기
 		//스프링 컨테이너로부터 필요한 객체를 요청하기
 //		BeanFactory beanFactory = new BeanFactory();
-//		TV tv = (TV) beanFactory.getBean("tv");
+//		TV tv = (TV) beanFactory.getBean("sam");
+////		TV tv = (TV) beanFactory.getBean("lg");
+//		System.out.println("tv = " + tv);
 //		tv.test();
 		
-		//xml 설정으로 객체 가져오기
-		TV tv = (TV) factory.getBean("tv");
-		tv.test();
+		//스프링 설정으로 의존성 주입하기 -> 1) xml, 2) 애노테이션
+//		TV tv1 = (TV) factory.getBean("samtv");
+//		tv1.test();
+		
+		//연결 테스트		
+		((TV) factory.getBean("samtv")).test();
+		((TV) factory.getBean("lgtv")).test();
 		
 		//스프링 컨테이너 종료 
 		factory.close();

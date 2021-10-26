@@ -1,17 +1,18 @@
 package polymorphism.devices;
 
 import javax.annotation.Resource;
-//import org.springframework.stereotype.Component;
-
+import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
-//@Component("tv")
-public class LgTV implements TV{	
+@Component("lgtv")
+public class LgTV implements TV {	
 	//@Resource -> 자동주입시 이름을 이용한 주입방식
 	
 	@Autowired
-//	@Resource(name = "apple")
+	@Resource(name = "apple")
+//	@Resource(name = "sony")
 	private Speaker speaker;
+	private int price;
 			
 	public LgTV() {
 		super();
@@ -22,10 +23,10 @@ public class LgTV implements TV{
 		this.speaker = speaker;
 		this.price = price;		
 	}
-	private int price;
 	
 	@Override
 	public void test() {
+		System.out.println(this.toString() + " 테스트");
 		showPrice();
 		powerOn();
 		powerOff();
@@ -45,11 +46,11 @@ public class LgTV implements TV{
 		System.out.println("엘지티비 끄기");		
 	}
 	@Override
-	public void volumeUp() {
-		System.out.println("엘지티비 소리 높이기");		
+	public void volumeUp() {		
+		speaker.volumeUp();
 	}
 	@Override
 	public void volumeDown() {
-		System.out.println("엘지티비 소리 낮추기");
+		speaker.volumeDown();
 	}
 }
